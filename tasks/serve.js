@@ -27,13 +27,13 @@ module.exports = function serve(cb) {
   );
   gulp.watch("src/images/sprite/*.svg", gulp.series(svgSprite, readyReload));
   gulp.watch(
-    "src/scss/**/*.scss",
+    "src/**/*.scss",
     gulp.series(styles, (cb) =>
       gulp.src("dist/css").pipe(server.stream()).on("end", cb)
     )
   );
-  gulp.watch("src/js/**/*.js", gulp.series(script, readyReload));
-  gulp.watch("src/html/*.html", gulp.series(html, readyReload));
+  gulp.watch("src/**/*.js", gulp.series(script, readyReload));
+  gulp.watch("src/**/*.html", gulp.series(html, readyReload));
 
   return cb();
 };

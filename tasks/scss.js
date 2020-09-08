@@ -1,7 +1,6 @@
 const gulp = require("gulp");
 const sass = require("gulp-sass");
 const autoprefixer = require("gulp-autoprefixer");
-const shorthand = require("gulp-shorthand");
 const cleanCSS = require("gulp-clean-css");
 const sourcemaps = require("gulp-sourcemaps");
 const concat = require("gulp-concat");
@@ -14,7 +13,6 @@ module.exports = function scss() {
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(sass())
-    .pipe(shorthand())
     .pipe(autoprefixer())
     .pipe(
       cleanCSS({
