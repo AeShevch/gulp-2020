@@ -5,7 +5,7 @@ const server = require("browser-sync").create();
 const del = require("del");
 const lighthouse = require("lighthouse");
 const chromeLauncher = require("chrome-launcher");
-const { write } = require("lighthouse/lighthouse-cli/printer");
+const {write} = require("lighthouse/lighthouse-cli/printer");
 const reportGenerator = require("lighthouse/lighthouse-core/report/report-generator");
 
 const config = require("./config");
@@ -48,6 +48,8 @@ async function runLighthouse(fileName) {
   const result = await launchChromeAndRunLighthouse(
     `http://localhost:${config.lighthouse.PORT}/${fileName}`
   );
+
+  console.log(`http://localhost:${config.lighthouse.PORT}/${fileName}`);
 
   await write(
     reportGenerator.generateReportHtml(result.lhr),

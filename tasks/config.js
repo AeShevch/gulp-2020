@@ -7,9 +7,6 @@ module.exports = {
   root,
   src,
   buildPath: path.join(root, "/dist"),
-  pug2html: {
-    beautifyHtml: false,
-  },
   lighthouse: {
     reportPath: path.join(root, "reports"),
     PORT: 8080,
@@ -22,8 +19,5 @@ module.exports = {
       chromeFlags: ["--show-paint-rects"],
       output: "html",
     },
-  },
-  copyDependencies: {
-    dist: path.join(src, "local_modules"),
-  },
+  }
 };
